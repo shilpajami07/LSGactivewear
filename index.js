@@ -3,9 +3,53 @@
 // ===================================
 
 document.addEventListener('DOMContentLoaded', function () {
-  alert("JS is running");
+ let cart = [];
 
-console.log("JS Loaded ✅");
+const cartItems = document.getElementById('cart-items');
+const cartCount = document.querySelector('.cart-count');
+const cartTotalAmount = document.getElementById('cart-total-amount');
+
+function updateCart() {
+if (!cartItems || !cartCount || !cartTotalAmount) return;
+
+let total = 0;
+let count = 0;
+
+cartItems.innerHTML = "";
+
+cart.forEach(item => {
+total += item.price * item.quantity;
+count += item.quantity;
+
+const div = document.createElement("div");
+div.textContent = `${item.name} x ${item.quantity}`;
+cartItems.appendChild(div);
+});
+
+cartCount.textContent = count;
+cartTotalAmount.textContent = "$" + total.toFixed(2);
+}
+
+document.addEventListener('click', function (e) {
+const button = e.target.closest('.quick-add');
+if (!button) return;
+
+const name = button.dataset.name;
+const price = parseFloat(button.dataset.price);
+
+let item = cart.find(i => i.name === name);
+
+if (item) {
+item.quantity++;
+} else {
+cart.push({ name, price, quantity: 1 });
+}
+
+updateCart();
+alert(name + " added");
+});
+
+});
 
 // ===================================
 // Mobile Navigation (SAFE)
