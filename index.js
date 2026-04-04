@@ -170,7 +170,7 @@ toast.classList.remove('active');
 // ===================================
 // Newsletter (SAFE FIX)
 // ===================================
-const newsletterForm = document.getElementById('newsletter-form');
+const newsletterForm = document.querySelector('newsletter-form');
 
 if (newsletterForm) {
 newsletterForm.addEventListener('submit', function (e) {
