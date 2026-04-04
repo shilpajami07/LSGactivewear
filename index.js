@@ -73,28 +73,30 @@ closeCartSidebar();
 }
 
 // ===================================
-// Quick Add (FIXED)
+// Quick Add
 // ===================================
-const quickAddButtons = document.querySelectorAll('.quick-add');
+document.addEventListener('click', function (e) {
+  const button = e.target.closest('.quick-add');
+  if (!button) return;
 
-quickAddButtons.forEach(button => {
-button.addEventListener('click', function (e) {
-e.stopPropagation();
+  const name = button.dataset.name || "Product";
+  const price = parseFloat(button.dataset.price) || 0;
 
-const name = this.dataset.name || "Product";
-const price = parseFloat(this.dataset.price) || 0;
+  const existingItem = cart.find(item => item.name === name);
 
-const existingItem = cart.find(item => item.name === name);
+  if (existingItem) {
+    existingItem.quantity += 1;
+  } else {
+    cart.push({
+      name,
+      price,
+      quantity: 1
+    });
+  }
 
-if (existingItem) {
-existingItem.quantity += 1;
-} else {
-cart.push({
-name: name,
-price: price,
-quantity: 1
+  updateCart();
+  showToast(`${name} added to bag!`);
 });
-}
 
 updateCart();
 showToast(`${name} added to bag!`);
