@@ -1,0 +1,1501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LSG Active | Women's Activewear</title>
+    <link rel="preconnect" href="[fonts.googleapis.com](https://fonts.googleapis.com)">
+    <link rel="preconnect" href="[fonts.gstatic.com](https://fonts.gstatic.com)" crossorigin>
+    <link href="[fonts.googleapis.com](https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500&display=swap)" rel="stylesheet">
+    
+    <style>
+        /* ===================================
+           CSS Variables & Reset
+        =================================== */
+        :root {
+            --color-bg: #F9F6F2;
+            --color-bg-alt: #EDE8E2;
+            --color-text: #2E2A27;
+            --color-text-light: #7A7570;
+            --color-accent: #C4A99A;
+            --color-accent-hover: #A6867A;
+            --color-white: #FFFFFF;
+            --color-border: #E0DBD5;
+            
+            --font-heading: 'Cormorant Garamond', serif;
+            --font-body: 'Montserrat', sans-serif;
+            
+            --spacing-xs: 0.5rem;
+            --spacing-sm: 1rem;
+            --spacing-md: 2rem;
+            --spacing-lg: 4rem;
+            --spacing-xl: 6rem;
+            
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            font-weight: 300;
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.6;
+            font-size: 16px;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        button {
+            cursor: pointer;
+            border: none;
+            background: none;
+            font-family: inherit;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+        }
+
+        /* ===================================
+           Typography
+        =================================== */
+        h1, h2, h3, h4 {
+            font-family: var(--font-heading);
+            font-weight: 400;
+            line-height: 1.2;
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            letter-spacing: -0.02em;
+        }
+
+        h2 {
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+        }
+
+        h3 {
+            font-size: 1.2rem;
+            font-family: var(--font-body);
+            font-weight: 400;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--color-text-light);
+            margin-top: calc(var(--spacing-sm) * -1);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .eyebrow {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--color-accent-hover);
+            display: block;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        /* ===================================
+           Buttons
+        =================================== */
+        .btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            font-size: 0.8rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            transition: var(--transition);
+            border: 1px solid transparent;
+        }
+
+        .btn-primary {
+            background-color: var(--color-accent);
+            color: var(--color-white);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--color-accent-hover);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            border-color: var(--color-text);
+            color: var(--color-text);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--color-text);
+            color: var(--color-white);
+        }
+
+        .btn-full {
+            width: 100%;
+            text-align: center;
+        }
+
+        /* ===================================
+           Announcement Bar
+        =================================== */
+        .announcement-bar {
+            background-color: var(--color-text);
+            color: var(--color-white);
+            text-align: center;
+            padding: var(--spacing-xs) var(--spacing-sm);
+            font-size: 0.7rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        /* ===================================
+           Navigation
+        =================================== */
+        .navbar {
+            position: sticky;
+            top: 0;
+            background-color: var(--color-bg);
+            z-index: 100;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: var(--spacing-sm) var(--spacing-md);
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo a {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            line-height: 1;
+        }
+
+        .logo-main {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            font-weight: 500;
+            letter-spacing: 0.3em;
+        }
+
+        .logo-sub {
+            font-size: 0.6rem;
+            letter-spacing: 0.4em;
+            color: var(--color-text-light);
+            margin-top: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: var(--spacing-md);
+        }
+
+        .nav-links a {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--color-text-light);
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background-color: var(--color-text);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--color-text);
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .nav-icons {
+            display: flex;
+            gap: var(--spacing-sm);
+            align-items: center;
+        }
+
+        .icon-btn {
+            color: var(--color-text);
+            padding: 0.5rem;
+            position: relative;
+        }
+
+        .icon-btn:hover {
+            color: var(--color-accent-hover);
+        }
+
+        .cart-count {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: var(--color-accent);
+            color: var(--color-white);
+            font-size: 0.6rem;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        .hamburger span {
+            width: 24px;
+            height: 1px;
+            background-color: var(--color-text);
+            transition: var(--transition);
+        }
+
+        /* ===================================
+           Hero Section
+        =================================== */
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 90vh;
+            align-items: center;
+        }
+
+        .hero-content {
+            padding: var(--spacing-xl);
+        }
+
+        .hero-content h1 {
+            margin-bottom: var(--spacing-md);
+        }
+
+        .hero-content h1 span {
+            font-style: italic;
+            color: var(--color-accent-hover);
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            color: var(--color-text-light);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .hero-image {
+            height: 100%;
+            background-color: var(--color-bg-alt);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-placeholder {
+            width: 100%;
+            height: 100%;
+            min-height: 500px;
+            background: linear-gradient(135deg, var(--color-bg-alt) 0%, var(--color-accent) 50%, var(--color-bg-alt) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-placeholder span {
+            font-family: var(--font-heading);
+            font-size: 8rem;
+            color: var(--color-white);
+            opacity: 0.3;
+            letter-spacing: 0.3em;
+        }
+
+        /* ===================================
+           Categories Section
+        =================================== */
+        .categories {
+            padding: var(--spacing-xl) 0;
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--spacing-md);
+        }
+
+        .category-card {
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .category-image {
+            aspect-ratio: 3/4;
+            background-color: var(--color-bg-alt);
+            margin-bottom: var(--spacing-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+            overflow: hidden;
+        }
+
+        .category-image span {
+            font-family: var(--font-heading);
+            font-size: 3rem;
+            color: var(--color-accent);
+            opacity: 0.5;
+        }
+
+        .category-card:hover .category-image {
+            background-color: var(--color-accent);
+        }
+
+        .category-card:hover .category-image span {
+            color: var(--color-white);
+            opacity: 1;
+        }
+
+        .category-card h3 {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        /* ===================================
+           Bestsellers / Products Section
+        =================================== */
+        .bestsellers {
+            padding: var(--spacing-xl) 0;
+            background-color: var(--color-white);
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--spacing-md);
+        }
+
+        .product-card {
+            cursor: pointer;
+        }
+
+        .product-image {
+            position: relative;
+            aspect-ratio: 3/4;
+            background-color: var(--color-bg-alt);
+            margin-bottom: var(--spacing-sm);
+            overflow: hidden;
+        }
+
+        .product-placeholder {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, var(--color-bg-alt) 0%, var(--color-border) 100%);
+        }
+
+        .product-badge {
+            position: absolute;
+            top: var(--spacing-sm);
+            left: var(--spacing-sm);
+            background-color: var(--color-text);
+            color: var(--color-white);
+            font-size: 0.65rem;
+            padding: 0.3rem 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .product-badge.new {
+            background-color: var(--color-accent);
+        }
+
+        .quick-add {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: var(--color-text);
+            color: var(--color-white);
+            padding: var(--spacing-sm);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            transform: translateY(100%);
+            transition: var(--transition);
+        }
+
+        .product-card:hover .quick-add {
+            transform: translateY(0);
+        }
+
+        .quick-add:hover {
+            background-color: var(--color-accent-hover);
+        }
+
+        .product-info h3 {
+            margin-bottom: 0.25rem;
+        }
+
+        .product-color {
+            font-size: 0.8rem;
+            color: var(--color-text-light);
+            margin-bottom: 0.25rem;
+        }
+
+        .product-price {
+            font-weight: 500;
+        }
+
+        /* ===================================
+           Story Section
+        =================================== */
+        .story {
+            padding: var(--spacing-xl) 0;
+        }
+
+        .story-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-lg);
+            align-items: center;
+        }
+
+        .story-image {
+            aspect-ratio: 4/5;
+            background-color: var(--color-bg-alt);
+        }
+
+        .story-placeholder {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, var(--color-bg-alt) 0%, var(--color-accent) 100%);
+        }
+
+        .story-content h2 {
+            margin-bottom: var(--spacing-md);
+        }
+
+        .story-content p {
+            color: var(--color-text-light);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .story-content .btn {
+            margin-top: var(--spacing-md);
+        }
+
+        /* ===================================
+           Features Section
+        =================================== */
+        .features {
+            padding: var(--spacing-xl) 0;
+            background-color: var(--color-bg-alt);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--spacing-lg);
+        }
+
+        .feature-card {
+            text-align: center;
+            padding: var(--spacing-md);
+        }
+
+        .feature-icon {
+            margin-bottom: var(--spacing-md);
+            color: var(--color-accent-hover);
+        }
+
+        .feature-card h3 {
+            margin-bottom: var(--spacing-sm);
+            font-family: var(--font-heading);
+            font-size: 1.4rem;
+        }
+
+        .feature-card p {
+            color: var(--color-text-light);
+            font-size: 0.9rem;
+        }
+
+        /* ===================================
+           Instagram Section
+        =================================== */
+        .instagram {
+            padding: var(--spacing-xl) 0;
+        }
+
+        .instagram-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: var(--spacing-xs);
+        }
+
+        .instagram-item {
+            aspect-ratio: 1;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .insta-placeholder {
+            width: 100%;
+            height: 100%;
+            background-color: var(--color-bg-alt);
+            transition: var(--transition);
+        }
+
+        .instagram-item:nth-child(1) .insta-placeholder { background: linear-gradient(135deg, #EDE8E2, #C4A99A); }
+        .instagram-item:nth-child(2) .insta-placeholder { background: linear-gradient(135deg, #C4A99A, #A6867A); }
+        .instagram-item:nth-child(3) .insta-placeholder { background: linear-gradient(135deg, #A6867A, #EDE8E2); }
+        .instagram-item:nth-child(4) .insta-placeholder { background: linear-gradient(135deg, #EDE8E2, #C4A99A); }
+        .instagram-item:nth-child(5) .insta-placeholder { background: linear-gradient(135deg, #C4A99A, #A6867A); }
+        .instagram-item:nth-child(6) .insta-placeholder { background: linear-gradient(135deg, #A6867A, #EDE8E2); }
+
+        .instagram-item:hover .insta-placeholder {
+            transform: scale(1.05);
+            opacity: 0.8;
+        }
+
+        /* ===================================
+           Newsletter Section
+        =================================== */
+        .newsletter {
+            padding: var(--spacing-xl) 0;
+            background-color: var(--color-text);
+            color: var(--color-white);
+        }
+
+        .newsletter-content {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .newsletter-content h2 {
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .newsletter-content > p {
+            opacity: 0.8;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: var(--spacing-sm);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 1rem 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background-color: transparent;
+            color: var(--color-white);
+            font-family: inherit;
+            font-size: 0.9rem;
+        }
+
+        .newsletter-form input::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .newsletter-form input:focus {
+            outline: none;
+            border-color: var(--color-accent);
+        }
+
+        .newsletter-form .btn {
+            white-space: nowrap;
+        }
+
+        .newsletter-note {
+            font-size: 0.75rem;
+            opacity: 0.5;
+        }
+
+        /* ===================================
+           Footer
+        =================================== */
+        .footer {
+            padding: var(--spacing-xl) 0 var(--spacing-md);
+            background-color: var(--color-bg-alt);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: var(--spacing-lg);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .footer-logo {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .footer-brand p {
+            color: var(--color-text-light);
+            font-size: 0.9rem;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .social-links {
+            display: flex;
+            gap: var(--spacing-sm);
+        }
+
+        .social-links a {
+            color: var(--color-text-light);
+            width: 40px;
+            height: 40px;
+            border: 1px solid var(--color-border);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .social-links a:hover {
+            color: var(--color-accent-hover);
+            border-color: var(--color-accent-hover);
+        }
+
+        .footer-col h4 {
+            font-family: var(--font-body);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: var(--spacing-md);
+            font-weight: 500;
+        }
+
+        .footer-col ul li {
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .footer-col a {
+            font-size: 0.9rem;
+            color: var(--color-text-light);
+        }
+
+        .footer-col a:hover {
+            color: var(--color-text);
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: var(--spacing-md);
+            border-top: 1px solid var(--color-border);
+            font-size: 0.8rem;
+            color: var(--color-text-light);
+        }
+
+        .footer-links {
+            display: flex;
+            gap: var(--spacing-md);
+        }
+
+        .footer-links a:hover {
+            color: var(--color-text);
+        }
+
+        /* ===================================
+           Cart Sidebar
+        =================================== */
+        .cart-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 200;
+        }
+
+        .cart-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .cart-sidebar {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 100%;
+            max-width: 420px;
+            height: 100%;
+            background-color: var(--color-white);
+            transform: translateX(100%);
+            transition: var(--transition);
+            z-index: 201;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cart-sidebar.active {
+            transform: translateX(0);
+        }
+
+        .cart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: var(--spacing-md);
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .cart-header h3 {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+        }
+
+        .close-cart {
+            color: var(--color-text-light);
+            font-size: 1.5rem;
+            line-height: 1;
+        }
+
+        .close-cart:hover {
+            color: var(--color-text);
+        }
+
+        .cart-items {
+            flex: 1;
+            overflow-y: auto;
+            padding: var(--spacing-md);
+        }
+
+        .cart-empty {
+            text-align: center;
+            padding: var(--spacing-xl) 0;
+        }
+
+        .cart-empty p {
+            color: var(--color-text-light);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .cart-item {
+            display: grid;
+            grid-template-columns: 80px 1fr auto;
+            gap: var(--spacing-sm);
+            padding-bottom: var(--spacing-md);
+            margin-bottom: var(--spacing-md);
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .cart-item-image {
+            aspect-ratio: 1;
+            background-color: var(--color-bg-alt);
+        }
+
+        .cart-item-details h4 {
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            font-weight: 400;
+            margin-bottom: 0.25rem;
+        }
+
+        .cart-item-details p {
+            font-size: 0.8rem;
+            color: var(--color-text-light);
+        }
+
+        .cart-item-price {
+            font-weight: 500;
+        }
+
+        .remove-item {
+            font-size: 0.75rem;
+            color: var(--color-text-light);
+            text-decoration: underline;
+            margin-top: var(--spacing-xs);
+        }
+
+        .remove-item:hover {
+            color: var(--color-text);
+        }
+
+        .cart-footer {
+            padding: var(--spacing-md);
+            border-top: 1px solid var(--color-border);
+        }
+
+        .cart-total {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: var(--spacing-md);
+            font-size: 1.1rem;
+        }
+
+        .cart-note {
+            text-align: center;
+            font-size: 0.75rem;
+            color: var(--color-text-light);
+            margin-top: var(--spacing-sm);
+        }
+
+        /* ===================================
+           Toast Notification
+        =================================== */
+        .toast {
+            position: fixed;
+            bottom: var(--spacing-md);
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background-color: var(--color-text);
+            color: var(--color-white);
+            padding: var(--spacing-sm) var(--spacing-md);
+            border-radius: 4px;
+            font-size: 0.85rem;
+            opacity: 0;
+            transition: var(--transition);
+            z-index: 300;
+        }
+
+        .toast.active {
+            transform: translateX(-50%) translateY(0);
+            opacity: 1;
+        }
+
+        /* ===================================
+           Responsive Design
+        =================================== */
+        @media (max-width: 1024px) {
+            .hero {
+                grid-template-columns: 1fr;
+                min-height: auto;
+            }
+            
+            .hero-content {
+                padding: var(--spacing-lg);
+                text-align: center;
+            }
+            
+            .hero-image {
+                min-height: 400px;
+            }
+            
+            .category-grid,
+            .product-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .story-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .story-image {
+                max-height: 500px;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: var(--spacing-md);
+            }
+            
+            .instagram-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: var(--color-bg);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: var(--spacing-lg);
+                transform: translateX(-100%);
+                transition: var(--transition);
+                z-index: 99;
+            }
+            
+            .nav-links.active {
+                transform: translateX(0);
+            }
+            
+            .nav-links a {
+                font-size: 1.5rem;
+            }
+            
+            .hamburger.active span:nth-child(1) {
+                transform: rotate(45deg) translate(4px, 4px);
+            }
+            
+            .hamburger.active span:nth-child(2) {
+                opacity: 0;
+            }
+            
+            .hamburger.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(4px, -4px);
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .social-links {
+                justify-content: center;
+            }
+            
+            .footer-bottom {
+                flex-direction: column;
+                gap: var(--spacing-sm);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .category-grid,
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .instagram-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .hero-placeholder span {
+                font-size: 4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Announcement Bar -->
+    <div class="announcement-bar">
+        <p>FREE SHIPPING ON ORDERS OVER $100 | 10% OFF YOUR FIRST ORDER</p>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            
+            <div class="logo">
+                <a href="#">
+                    <span class="logo-main">LSG</span>
+                    <span class="logo-sub">ACTIVE</span>
+                </a>
+            </div>
+            
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#shop">Shop</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            
+            <div class="nav-icons">
+                <button class="icon-btn search-btn" aria-label="Search">
+                    <svg xmlns="[w3.org](http://www.w3.org/2000/svg)" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                </button>
+                <button class="icon-btn cart-btn" aria-label="Cart">
+                    <svg xmlns="[w3.org](http://www.w3.org/2000/svg)" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path>
+                        <path d="M3 6h18"></path>
+                        <path d="M16 10a4 4 0 0 1-8 0"></path>
+                    </svg>
+                    <span class="cart-count">0</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Strength Looks Good<br><span>On You</span></h1>
+            <p>Premium activewear for women who move.</p>
+            <a href="#shop" class="btn btn-primary">Shop the Edit</a>
+        </div>
+        <div class="hero-image">
+            <div class="hero-placeholder">
+                <span>LSG</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories" id="shop">
+        <div class="container">
+            <h2 class="section-title">Shop by Category</h2>
+            <div class="category-grid">
+                <div class="category-card">
+                    <div class="category-image">
+                        <span>01</span>
+                    </div>
+                    <h3>Leggings</h3>
+                </div>
+                <div class="category-card">
+                    <div class="category-image">
+                        <span>02</span>
+                    </div>
+                    <h3>Tops</h3>
+                </div>
+                <div class="category-card">
+                    <div class="category-image">
+                        <span>03</span>
+                    </div>
+                    <h3>Sports Bras</h3>
+                </div>
+                <div class="category-card">
+                    <div class="category-image">
+                        <span>04</span>
+                    </div>
+                    <h3>Sets</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bestsellers Section -->
+    <section class="bestsellers">
+        <div class="container">
+            <h2 class="section-title">The LSG Bestsellers</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-image">
+                        <span class="product-badge">Bestseller</span>
+                        <div class="product-placeholder"></div>
+                        <button class="quick-add" data-name="Sculpt Legging" data-price="89">+ Quick Add</button>
+                    </div>
+                    <div class="product-info">
+                        <h3>Sculpt Legging</h3>
+                        <p class="product-color">Sand / Clay / Espresso</p>
+                        <p class="product-price">$89</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <div class="product-placeholder"></div>
+                        <button class="quick-add" data-name="Flow Tank" data-price="55">+ Quick Add</button>
+                    </div>
+                    <div class="product-info">
+                        <h3>Flow Tank</h3>
+                        <p class="product-color">Ivory / Taupe / Stone</p>
+                        <p class="product-price">$55</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <span class="product-badge new">New</span>
+                        <div class="product-placeholder"></div>
+                        <button class="quick-add" data-name="Elevate Bra" data-price="65">+ Quick Add</button>
+                    </div>
+                    <div class="product-info">
+                        <h3>Elevate Bra</h3>
+                        <p class="product-color">Sand / Blush / Espresso</p>
+                        <p class="product-price">$65</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <div class="product-placeholder"></div>
+                        <button class="quick-add" data-name="The Essential Set" data-price="140">+ Quick Add</button>
+                    </div>
+                    <div class="product-info">
+                        <h3>The Essential Set</h3>
+                        <p class="product-color">Clay / Stone</p>
+                        <p class="product-price">$140</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Story Section -->
+    <section class="story" id="about">
+        <div class="container">
+            <div class="story-grid">
+                <div class="story-image">
+                    <div class="story-placeholder"></div>
+                </div>
+                <div class="story-content">
+                    <span class="eyebrow">Our Story</span>
+                    <h2>Designed for the Everyday Athlete</h2>
+                    <p>From sunrise runs to studio sessions — LSG Active moves with you, not against you.</p>
+                    <p>We believe activewear should feel as good as it looks. Every piece is crafted with buttery-soft, squat-proof fabrics in timeless neutral tones that fit seamlessly into your life.</p>
+                    <a href="#" class="btn btn-secondary">Discover More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">The LSG Difference</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg xmlns="[w3.org](http://www.w3.org/2000/svg)" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z"></path>
+                        </svg>
+                    </div>
+                    <h3>Buttery-Soft Fabrics</h3>
+                    <p>Second-skin feel with 4-way stretch that moves with your body.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg xmlns="[w3.org](http://www.w3.org/2000/svg)" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                            <path d="m9 12 2 2 4-4"></path>
+                        </svg>
+                    </div>
+                    <h3>Squat-Proof Fit</h3>
+                    <p>No see-through, ever. We promise complete coverage and confidence.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg xmlns="[w3.org](http://www.w3.org/2000/svg)" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+                        </svg>
+                    </div>
+                    <h3>Sustainable Materials</h3>
+                    <p>Recycled nylon, eco-friendly dyes, and plastic-free packaging.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instagram Section -->
+    <section class="instagram">
+        <div class="container">
+            <h2 class="section-title">#LSGActive</h2>
+            <p class="section-subtitle">Join our community of women in motion</p>
+            <div class="instagram-grid">
+                <div class="instagram-item"><div class="insta-placeholder"></div></div>
+                <div class="instagram-item"><div class="insta-placeholder"></div></div>
+                <div class="instagram-item"><div class="insta-placeholder"></div></div>
+                <div class="instagram-item"><div class="insta-placeholder"></div></div>
+                <div class="instagram-item"><div class="insta-placeholder"></div></div>
+                <div class="instagram-item"><div class="insta-placeholder"></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter" id="contact">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Join the Movement</h2>
+                <p>Subscribe for 10% off your first order, plus exclusive access to new drops and special offers.</p>
+                <form class="newsletter-form" id="newsletter-form">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </form>
+                <p class="newsletter-note">We respect your privacy. Unsubscribe anytime.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col footer-brand">
+                    <div class="footer-logo">
+                        <span class="logo-main">LSG</span>
+                        <span class="logo-sub">ACTIVE</span>
+                    </div>
+                    <p>Activewear designed for every body, every movement, every day.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Instagram">IG</a>
+                        <a href="#" aria-label="TikTok">TK</a>
+                        <a href="#" aria-label="Pinterest">PT</a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Shop</h4>
+                    <ul>
+                        <li><a href="#">New Arrivals</a></li>
+                        <li><a href="#">Leggings</a></li>
+                        <li><a href="#">Tops</a></li>
+                        <li><a href="#">Sports Bras</a></li>
+                        <li><a href="#">Sets</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Help</h4>
+                    <ul>
+                        <li><a href="#">Shipping</a></li>
+                        <li><a href="#">Returns</a></li>
+                        <li><a href="#">Size Guide</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>About</h4>
+                    <ul>
+                        <li><a href="#">Our Story</a></li>
+                        <li><a href="#">Sustainability</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 LSG Active. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-overlay" id="cart-overlay"></div>
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3>Your Bag</h3>
+            <button class="close-cart" id="close-cart">✕</button>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <div class="cart-empty">
+                <p>Your bag is empty</p>
+                <a href="#shop" class="btn btn-secondary" id="continue-shopping">Continue Shopping</a>
+            </div>
+        </div>
+        <div class="cart-footer" id="cart-footer" style="display: none;">
+            <div class="cart-total">
+                <span>Subtotal</span>
+                <span id="cart-total-amount">$0</span>
+            </div>
+            <button class="btn btn-primary btn-full">Checkout</button>
+            <p class="cart-note">Shipping calculated at checkout</p>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <p id="toast-message">Added to bag!</p>
+    </div>
+
+    <script>
+        // ===================================
+        // LSG Active - Main JavaScript
+        // ===================================
+
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            // Mobile Navigation
+            const hamburger = document.getElementById('hamburger');
+            const navLinks = document.getElementById('nav-links');
+            
+            hamburger.addEventListener('click', function() {
+                hamburger.classList.toggle('active');
+                navLinks.classList.toggle('active');
+            });
+            
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', function() {
+                    hamburger.classList.remove('active');
+                    navLinks.classList.remove('active');
+                });
+            });
+            
+            // Cart Functionality
+            const cartBtn = document.querySelector('.cart-btn');
+            const cartSidebar = document.getElementById('cart-sidebar');
+            const cartOverlay = document.getElementById('cart-overlay');
+            const closeCart = document.getElementById('close-cart');
+            const cartItems = document.getElementById('cart-items');
+            const cartFooter = document.getElementById('cart-footer');
+            const cartCount = document.querySelector('.cart-count');
+            const cartTotalAmount = document.getElementById('cart-total-amount');
+            const toast = document.getElementById('toast');
+            const toastMessage = document.getElementById('toast-message');
+            
+            let cart = [];
+            
+            cartBtn.addEventListener('click', function() {
+                cartSidebar.classList.add('active');
+                cartOverlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+            
+            function closeCartSidebar() {
+                cartSidebar.classList.remove('active');
+                cartOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+            
+            closeCart.addEventListener('click', closeCartSidebar);
+            cartOverlay.addEventListener('click', closeCartSidebar);
+            
+            // Add to cart
+            document.querySelectorAll('.quick-add').forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    
+                    const name = this.dataset.name;
+                    const price = parseFloat(this.dataset.price);
+                    
+                    const existingItem = cart.find(item => item.name === name);
+                    
+                    if (existingItem) {
+                        existingItem.quantity += 1;
+                    } else {
+                        cart.push({ name, price, quantity: 1 });
+                    }
+                    
+                    updateCart();
+                    showToast(`${name} added to bag!`);
+                });
+            });
+            
+            function updateCart() {
+                const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+                const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+                
+                cartCount.textContent = totalItems;
+                cartTotalAmount.textContent = `$${totalPrice}`;
+                
+                if (cart.length === 0) {
+                    cartItems.innerHTML = `
+                        <div class="cart-empty">
+                            <p>Your bag is empty</p>
+                            <a href="#shop" class="btn btn-secondary" onclick="closeCartSidebar()">Continue Shopping</a>
+                        </div>
+                    `;
+                    cartFooter.style.display = 'none';
+                } else {
+                    let cartHTML = '';
+                    
+                    cart.forEach((item, index) => {
+                        cartHTML += `
+                            <div class="cart-item">
+                                <div class="cart-item-image"></div>
+                                <div class="cart-item-details">
+                                    <h4>${item.name}</h4>
+                                    <p>Size: M | Color: Sand</p>
+                                    <p>Qty: ${item.quantity}</p>
+                                    <button class="remove-item" onclick="removeItem(${index})">Remove</button>
+                                </div>
+                                <div class="cart-item-price">$${item.price * item.quantity}</div>
+                            </div>
+                        `;
+                    });
+                    
+                    cartItems.innerHTML = cartHTML;
+                    cartFooter.style.display = 'block';
+                }
+            }
+            
+            window.removeItem = function(index) {
+                cart.splice(index, 1);
+                updateCart();
+                showToast('Item removed from bag');
+            };
+            
+            window.closeCartSidebar = closeCartSidebar;
+            
+            function showToast(message) {
+                toastMessage.textContent = message;
+                toast.classList.add('active');
+                setTimeout(() => toast.classList.remove('active'), 3000);
+            }
+            
+            // Newsletter Form
+            document.getElementById('newsletter-form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                showToast('Thanks for subscribing! Check your email for 10% off.');
+                this.reset();
+            });
+            
+            // Smooth Scroll
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    e.preventDefault();
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
