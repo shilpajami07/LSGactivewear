@@ -3,7 +3,7 @@
 // ===================================
 
 document.addEventListener('DOMContentLoaded', function () {
-  alert("JS IS RUNNING");
+  alert("JS is running");
 
 console.log("JS Loaded ✅");
 
